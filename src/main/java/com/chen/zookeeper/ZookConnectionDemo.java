@@ -8,7 +8,7 @@ public class ZookConnectionDemo {
     public static void main(String[] args) {
         try {
             final CountDownLatch countDownLatch = new CountDownLatch(1);
-            ZooKeeper zooKeeper = new ZooKeeper("ip+port", 4000, new Watcher() {
+            ZooKeeper zooKeeper = new ZooKeeper("127.0.0.1:8081", 4000, new Watcher() {
                 @Override
                 public void process(WatchedEvent watchedEvent) {
                     if (Event.KeeperState.SyncConnected == watchedEvent.getState()) {
